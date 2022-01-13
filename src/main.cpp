@@ -4,9 +4,9 @@
   #define OFF 1
   #define PIN_LED LED_BUILTIN
 #elif defined(ESP32)
-  #define ON 1
-  #define PIN_LED 12
-  #define OFF 0
+  #define ON 0
+  #define PIN_LED 33
+  #define OFF 1
 #endif
 void setup() {
   Serial.begin(9600);
