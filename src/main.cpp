@@ -1,22 +1,14 @@
 #include <Arduino.h>
-#if defined(ESP8266)
-  #define ON 0
-  #define OFF 1
-  #define PIN_LED LED_BUILTIN
-#elif defined(ESP32)
-  #define ON 0
-  #define PIN_LED 33
-  #define OFF 1
-#endif
+#define LED_BUILTIN 33
 void setup() {
   Serial.begin(9600);
-  pinMode(PIN_LED, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
+  digitalWrite(LED_BUILTIN, 0);
   Serial.println("Hello");
-  digitalWrite(PIN_LED, ON);
   delay(100);
-  digitalWrite(PIN_LED, OFF);
+  digitalWrite(LED_BUILTIN, 1);
   delay(900);
 }
